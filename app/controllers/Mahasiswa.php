@@ -40,4 +40,8 @@ class Mahasiswa extends Controller {
 			exit;
 		}
 	}
+
+	public function getubah(){
+		$this->model('Mahasiswa_model')->getDataUbah($_POST['id']);
+	}
 }
