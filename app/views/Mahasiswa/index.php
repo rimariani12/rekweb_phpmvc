@@ -17,7 +17,7 @@
 	<div class="row mb-3">
 		<div class="col-lg-6">
 			<form action="<? BASEURL; ?>/mahasiswa/cari" method="post">
-				<div class="input-group mb-3">
+				<div class="input-group">
 					<input type="text" class="form-control" placeholder="cari mahasiswa.." name="keyword" id="keyword" autocomplete="off">
 					<div class="input-group-append">
 						<button class="btn btn-primary" type="submit" id="tombolCari">Cari</button>
@@ -29,17 +29,17 @@
 	</div>
 
 	<div class = "row">
-		<div class = "col-lg-6">
+		<div class = "col-6">
 			
 			<h3>Daftar Mahasiswa</h3>
 			<ul class = "list-group">
 				<?php foreach ($data['mhs'] as $mhs) : ?>
 				<li class = "list-group-item"><?= $mhs['nama']; ?>
-					<a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id']; ?>" class = "badge badge-danger float-right ml-1" onclick="return confirm('yakin?');">hapus</a>
+					<a href="<?= BASEURL; ?>/mahasiswa/hapus/<?= $mhs['id'] ?>" class = "badge badge-danger float-right ml-1" onclick="return confirm('yakin?')">hapus</a>
 
-					<a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id']; ?>" class = "badge badge-success float-right" data-toggle="modal" data-target="#formModal" data-id="<?=$mhs['id']; ?>">ubah</a>
+					<a href="<?= BASEURL; ?>/mahasiswa/ubah/<?= $mhs['id'] ?>" class = "badge badge-success float-right ml-1 tampilModalUbah" data-toggle="modal" data-target="#formModal" data-id="<?= $mhs['id']; ?>">ubah</a>
 
-					<a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id']; ?>" class = "badge badge-primary float-right ml-1">detail</a>
+					<a href="<?= BASEURL; ?>/mahasiswa/detail/<?= $mhs['id'] ?>" class = "badge badge-primary float-right ml-1">detail</a>
 				</li>
 				<?php endforeach; ?>
 			</ul>					
@@ -52,7 +52,7 @@
 
 </div>
 <!-- Modal -->
-<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="judulModal" aria-hidden="true">
+<div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModal" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">

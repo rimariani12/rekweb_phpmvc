@@ -1,6 +1,6 @@
 $(function(){
 
-	$('.tombolTambahData').on('click', function){
+	$('.tombolTambahData').on('click', function(){
 		$('#formModalLabel').html('Tambah Data Mahasiswa');
 		$('.modal-footer button[type=submit]').html('Tambah Data');
 	});
@@ -9,12 +9,12 @@ $(function(){
 
 		$('#formModalLabel').html('ubah data mahasiswa');
 		$('.modal-footer button[type=submit]').html('Ubah Data');
-		$('.modal-body form').attr('action', 'http://localhost/phpmvc/public/mahasiswa/ubah');
+		$('.modal-body form').attr('action', 'http://localhost/rekweb/phpmvc/public/mahasiswa/ubah');
 
 		const id = $(this).data('id');
 
 		$.ajax({
-			url: 'http://localhost/phpmvc/public/mahasiswa/getubah',
+			url: 'http://localhost/rekweb/phpmvc/public/mahasiswa/getubah',
 			data : {id : id},
 			method : 'post',
 			dataType : 'json',
